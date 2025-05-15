@@ -4,8 +4,12 @@ body{
   scroll-behavior: smooth;
 }
 .name h1 {
-    font-family: 'Lilita One', cursive;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px; /* adjust as needed */
+    letter-spacing: 2px;
+    font-weight: 400;
 }
+
 
 /* ------------------------------------------------------------------------- */
 /* Navbar css starts here */
