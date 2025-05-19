@@ -337,7 +337,7 @@ Proven ability to lead complex DevOps transformations, implement DevSecOps pract
                 </div>
             </div>
             <div class="contact-form">
-                <form onsubmit="redirectToWhatsApp(); return false;">
+                <form id="whatsappForm">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
 
@@ -351,18 +351,23 @@ Proven ability to lead complex DevOps transformations, implement DevSecOps pract
 </form>
 
 <script>
-  function redirectToWhatsApp() {
+  document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent actual form submission
+
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    const fullMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+    const fullMessage = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
     const encodedMessage = encodeURIComponent(fullMessage);
+
+    // Replace this with your actual wa.link URL
     const whatsappURL = `https://wa.link/tcytlf?text=${encodedMessage}`;
 
     window.open(whatsappURL, "_blank");
-  }
+  });
 </script>
+
 
             </div>
         </div>
