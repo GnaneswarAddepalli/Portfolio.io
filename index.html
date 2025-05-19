@@ -414,18 +414,33 @@ Proven ability to lead complex DevOps transformations, implement DevSecOps pract
                 </div>
             </div>
             <div class="contact-form">
-                <form action="#">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                <form onsubmit="redirectToWhatsApp(); return false;">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
 
-                    <button type="submit">Send</button>
-                </form>
+    <button type="submit">Send</button>
+</form>
+
+<script>
+  function redirectToWhatsApp() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const fullMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+    const encodedMessage = encodeURIComponent(fullMessage);
+    const whatsappURL = `https://wa.link/tcytlf?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  }
+</script>
+
             </div>
         </div>
     </section>
